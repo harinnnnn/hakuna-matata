@@ -1,7 +1,7 @@
 
 ## 직접 만든 기술 블로그 & 포트폴리오 사이트
 
-주소: [여기](https://hakuna-matata-theta.vercel.app/main)
+주소: [](https://hakuna-matata-theta.vercel.app/main)
 
 
 ### Install
