@@ -6,6 +6,7 @@ import MainRightStar from '../../public/images/main-right-star.svg';
 import Github from '../../public/images/ico-github.svg';
 import TicketIcon from '../../public/images/ico-ticket.svg';
 import Barcode from '../../public/images/barcode-white.svg';
+import PortfolioRotate from '../../public/images/portfolio-rotate.svg';
 
 export const Colors = {
   White: '#FFFFFF',
@@ -21,4 +22,5 @@ export const Images = {
   Github,
   TicketIcon,
   Barcode,
+  PortfolioRotate,
 };
