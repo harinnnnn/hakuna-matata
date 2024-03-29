@@ -1,95 +1,87 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
+import React from 'react';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { Italiana, Noto_Sans, Jacques_Francois_Shadow } from 'next/font/google';
+
+// Styles
+import { Images } from '@/styles/globalStyles';
+import HomeContainer from '@/styles/app/page.styles';
+
+const italiana = Italiana({ subsets: ['latin'], weight: ['400'] });
+const NotoSans = Noto_Sans({ subsets: ['latin'], weight: ['400'] });
+const JacquesFrancoisShadow = Jacques_Francois_Shadow({ subsets: ['latin'], weight: ['400'] });
+
+function Home() {
+  const harin = ['H', 'a', 'r', 'i', 'n'];
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+    <HomeContainer>
+      <section className="top-container">
+        <p className={JacquesFrancoisShadow.className}>
+          Hello, My name is Harin.
+          <br />
+          I am a front-end developer with a lot of curiosity.
+          <br />
+          Nice to meet you. Have fun looking around.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+        <div className="icons-container">
+          <Link href="https://github.com/harinnnnn" target="_blank">
+            <Image src={Images.Github} alt="move to github" />
+          </Link>
+          <Image src={Images.TicketIcon} alt="open ticket" />
         </div>
-      </div>
+      </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="center-container">
+        <div className="circle">
+          <Image src={Images.MainCircle} alt="circle" />
+        </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <Image src={Images.MainLeftStarBig} alt="left-big-star" />
+        <Image src={Images.MainLeftStarSmall} alt="left-small-star" />
+        <div className={`${italiana.className} name-wrapper`}>
+          {harin.map(name => {
+            return <div className="name">{name}</div>;
+          })}
+        </div>
+        <Image className="right-star" src={Images.MainRightStar} alt="right-star" />
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      <section className={`${JacquesFrancoisShadow.className} bottom-container`}>
+        <Link href="/portfolios">
+          <div className="menu portfolios">
+            <div className="header">Portfolio</div>
+            <p>
+              Please click here
+              <br />
+              to navigate my portfolio.
+            </p>
+          </div>
+        </Link>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+        <div className="barcode-container">
+          <Image src={Images.Barcode} alt="barcode" />
+          <span className={NotoSans.className}>0821-HAKUNA-MATATA-0927</span>
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <Link href="/posts">
+          {' '}
+          <div className="menu posts">
+            <div className="header">Posts</div>
+            <p>
+              Please click here
+              <br />
+              to navigate my blog.
+            </p>
+          </div>
+        </Link>
+      </section>
+    </HomeContainer>
   );
 }
+
+export default Home;

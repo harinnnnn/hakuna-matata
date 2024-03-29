@@ -16,8 +16,7 @@
     "airbnb-typescript",
     "airbnb/hooks",
     "prettier",
-    "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
+    "plugin:prettier/recommended"
   ],
   "rules": {
     "import/no-cycle": "off",
