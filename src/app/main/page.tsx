@@ -10,6 +10,7 @@ import { Italiana, Noto_Sans, Jacques_Francois_Shadow } from 'next/font/google';
 import { Images } from '@/styles/globalStyles';
 import MainContainer from '@/styles/app/main.styles';
 
+// Fonts
 const italiana = Italiana({ subsets: ['latin'], weight: ['400'] });
 const NotoSans = Noto_Sans({ subsets: ['latin'], weight: ['400'] });
 const JacquesFrancoisShadow = Jacques_Francois_Shadow({ subsets: ['latin'], weight: ['400'] });
